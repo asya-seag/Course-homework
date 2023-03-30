@@ -9,32 +9,42 @@ store_dict = {
 #entering money available for customer
 money_available = 100
 
-
+class WrongInputError(Exception):
+    pass
 #Welcome the customer and display the items and their prices, along with an option to “exit”
-print(f"Welcome to our shop, please view the items \n {store_dict}. ")
+def welcomeToShop():
+    print(f"Welcome to our shop, please view the items \n {store_dict}. ")
+welcomeToShop()
+
+
+
 exit = input("Would you like to exit our online store? (yes/no) " )
 if exit == "yes":
     print("Thank you for visiting our online store!")
 elif exit == "no":
     customer_selection = input("Please select your item: ")
 else:
-     print("Wrong answer, answer yes or no")
+     raise WrongInputError("Wrong answer, answer yes or no")
+
 # Accept the option as an input, an invalid input should raise a ValueError
+def yourselection():
+    print("You have selected " + customer_selection)
+yourselection()
+class WrongItemError(Exception):
+    pass
+
+
+if customer_selection not in store_dict:
+    raise WrongItemError ("ValueError, there is no such item in the shop")
+else:
+    for keys, values in store_dict.items():
+        if keys == customer_selection:
+            final_price = 0 + store_dict[keys]
 
 
 
-try:
-        if customer_selection not in store_dict:
-            raise ValueError
-        else:
-            for keys, values in store_dict.items():
-                if keys == customer_selection:
-                    final_price = 0 + store_dict[keys]
-
-except ValueError:
-            print("ValueError, there is no such item in the shop")
-
-
+class ExceededNumberOfAttemptsError(Exception):
+    pass
 
 counter = 0
 if final_price <= money_available:
@@ -50,7 +60,7 @@ else:
 
 
     else:
-        print("Error can not exceed three attempts")
+        raise ExceededNumberOfAttemptsError("Error, too many attempts to add sufficient amount of money")
 
 
 
