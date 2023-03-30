@@ -197,36 +197,37 @@
 
 
 
-#Excercises
-# Exercise 1
-def validate_name(name):
-    if ',' not in name:
-        raise ValueError("Incorrect input: missing ',' to separate first name and last name")
+# #Excercises
+# # Exercise 1
+# def validate_name(name):
+#     if ',' not in name:
+#         raise ValueError("Incorrect input: missing ',' to separate first name and last name")
+#
+#     names = name.split(',')
+#     if len(names[0]) < 1 or len(names[1]) < 1:
+#         raise ValueError("Incorrect input: missing first name or surname value")
+#
+# def validate_age(age):
+#     if age < 0:
+#         raise ValueError("Incorrect input: only positive values allowed")
+#     assert age > 12 and age < 20
+# try:
+#     is_reg_successful = False
+#     name = input("Please enter your first name and last name separated by comma:")
+#     validate_name(name)
+#     age = int(input('Please enter your age:'))
+#     validate_age(age)
+# except ValueError as error:
+#     print("Invalid input {}".format(error))
+# except AssertionError as error:
+#     print("The age is not within the 'teenager' category")
+# else:
+#     with open('registration.txt', "a+") as file:
+#         file.write("New member name: {} and age {} \n".format(name, age))
+#         is_reg_successful = True
+# finally:
+#     if is_reg_successful:
+#         print("Registration Process completed SUCCESSFULLY")
+#     else:
+#         print("Could not complete registration.Please try again")
 
-    names = name.split(',')
-    if len(names[0]) < 1 or len(names[1]) < 1:
-        raise ValueError("Incorrect input: missing first name or surname value")
-
-def validate_age(age):
-    if age < 0:
-        raise ValueError("Incorrect input: only positive values allowed")
-    assert age > 12 and age < 20
-try:
-    is_reg_successful = False
-    name = input("Please enter your first name and last name separated by comma:")
-    validate_name(name)
-    age = int(input('Please enter your age:'))
-    validate_age(age)
-except ValueError as error:
-    print("Invalid input {}".format(error))
-except AssertionError as error:
-    print("The age is not within the 'teenager' category")
-else:
-    with open('registration.txt', "a+") as file:
-        file.write("New member name: {} and age {} \n".format(name, age))
-        is_reg_successful = True
-finally:
-    if is_reg_successful:
-        print("Registration Process completed SUCCESSFULLY")
-    else:
-        print("Could not complete registration.Please try again")
