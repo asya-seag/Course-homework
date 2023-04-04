@@ -31,7 +31,7 @@ _Question 7_ <br>
 What is the git command that updates the remote repository with local repository code?<br>
 The _git push_ command does this.
 
-_Question 8_ <br>
+_Question 8_ <br> <br>
 What does _git commit_ comand need to work?<br>
 Before execution of this command it is necessary to tell Git which changes should be included in commit. <br>
 
