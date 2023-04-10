@@ -36,4 +36,5 @@ class TestWordinDictionary(unittest.TestCase):
         message = "Word is in the dictionary."
         self.assertIn(word, word_from_dictionary, message)
 
-#recommit for pull
+#recommit
+
