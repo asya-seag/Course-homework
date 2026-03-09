@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Recipe App</title>
+    </head>
+    <body>
+        <h1> Welcome to the Recipe App </h1> 
+        <ul>
+            {% for recipe in recipes %}
+            <li>
+                <a href="/recipe/{{ recipe.id }}"><strong>{{recipe.title}}</strong></a>
+                - {{ recipe.descriptions }}
+            </li>
+        {% endfor %}
+        </ul>
+
+    </body>
+</html>
+
+
+
+
+
