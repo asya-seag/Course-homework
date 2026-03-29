@@ -33,6 +33,6 @@ The _git push_ command does this.
 
 _Question 8_ <br>
 What does _git commit_ comand need to work?<br>
-Before execution of this command it is necessary to tell Git which changes should be included in commit. 
+Before execution of this command it is necessary to tell Git which changes should be included in commit. #pull
 
 
